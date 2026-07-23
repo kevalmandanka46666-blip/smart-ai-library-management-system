@@ -1,0 +1,330 @@
+/* ═══════════════════════════════════════════════════════════
+   NOTIFICATIONS MANAGEMENT CENTER — Premium Styling
+   Matches Smart Library design system (gold accents, cards)
+   ═══════════════════════════════════════════════════════════ */
+
+.notifications-page {
+  padding: 2rem 3rem;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  animation: notifFadeIn 0.35s ease-out;
+}
+
+@keyframes notifFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Page Layout Grid */
+.notif-grid-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+/* Left Sidebar Controls */
+.notif-sidebar-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.notif-filter-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.notif-filter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #64748b;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.notif-filter-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.notif-filter-btn.active {
+  background: #fefbeb;
+  color: #b8860b;
+}
+
+.notif-count-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: #f1f5f9;
+  color: #64748b;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+}
+
+.notif-filter-btn.active .notif-count-badge {
+  background: #fde68a;
+  color: #92400e;
+}
+
+/* Right Content Area */
+.notif-content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Toolbar Actions */
+.notif-toolbar-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.85rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Alert Notification List Card */
+.notif-alert-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.15rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.notif-alert-card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.notif-alert-card.unread {
+  border-left: 4px solid #d4a017;
+  background: #fffbeb;
+}
+
+/* Icons & Visual Accents */
+.notif-avatar-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  background: #f1f5f9;
+}
+
+.notif-alert-card.unread .notif-avatar-icon {
+  background: #fde68a;
+}
+
+.notif-body-pane {
+  flex: 1;
+}
+
+.notif-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.35rem;
+  gap: 0.5rem;
+}
+
+.notif-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.notif-card-time {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+.notif-card-msg {
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Card Badge Tags */
+.notif-tag-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+}
+
+/* Actions */
+.notif-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.btn-notif-action {
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-notif-action:hover {
+  background: #f8fafc;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+.btn-notif-danger {
+  color: #dc2626;
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+
+.btn-notif-danger:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Preferences Toggle List */
+.notif-pref-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.notif-pref-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.notif-pref-item:last-child {
+  border-bottom: none;
+}
+
+.notif-pref-info h5 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.15rem 0;
+}
+
+.notif-pref-info p {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Toggle Switch Styling */
+.notif-toggle {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.notif-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.notif-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #cbd5e1;
+  border-radius: 20px;
+  transition: 0.25s;
+}
+
+.notif-slider::before {
+  content: '';
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: 0.25s;
+}
+
+.notif-toggle input:checked + .notif-slider {
+  background-color: #d4a017;
+}
+
+.notif-toggle input:checked + .notif-slider::before {
+  transform: translateX(20px);
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .notifications-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .notif-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .notifications-page {
+    padding: 1rem 0.5rem;
+  }
+
+  .notif-alert-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .notif-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .notif-card-time {
+    white-space: normal;
+  }
+}

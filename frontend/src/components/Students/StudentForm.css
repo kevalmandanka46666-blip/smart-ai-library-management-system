@@ -1,0 +1,209 @@
+/* ===== Student Form - PREMIUM GOLD & WHITE DESIGN ===== */
+:root {
+  --gold: #D4A017;
+  --gold-dark: #b3861b;
+  --gold-soft: #fbf7ed;
+  --ink: #1e1b15;
+  --ink-soft: #5c5549;
+  --bg: #fdfcf9;
+  --card: #ffffff;
+  --shadow-soft: 0 10px 40px rgba(20, 18, 15, 0.05);
+  --border-radius: 16px;
+}
+
+.student-form-container {
+  padding: 3rem 2.5rem;
+  max-width: 960px;
+  margin: 2rem auto;
+  background: var(--card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(226, 211, 179, 0.6);
+}
+
+.student-form-container h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1.5px solid rgba(212, 160, 23, 0.15);
+}
+
+.student-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.85rem 1.15rem;
+  border: 1.5px solid rgba(212, 160, 23, 0.25);
+  border-radius: 10px;
+  font-size: 0.98rem;
+  height: 48px; /* equal height for inputs and selects */
+  transition: all 0.25s ease;
+  background: #fffdfa;
+  color: var(--ink);
+  font-family: inherit;
+}
+
+.form-group select {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.form-group textarea {
+  height: auto; /* textarea height auto */
+  min-height: 110px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(212, 160, 23, 0.12);
+  background: #ffffff;
+}
+
+.form-group small {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  margin-top: 0.1rem;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: #fdf2f2;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: 10px;
+  color: #dc2626;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.error-message button {
+  background: none;
+  border: none;
+  color: #dc2626;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-left: auto;
+  padding: 0.2rem;
+}
+
+.success-message {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: #e6f6ec;
+  border: 1px solid rgba(22, 163, 74, 0.2);
+  border-radius: 10px;
+  color: #15803d;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1.5px solid rgba(226, 211, 179, 0.4);
+  margin-top: 1rem;
+}
+
+.form-actions button {
+  flex: 1;
+  height: 52px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.form-actions button:first-child {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(212, 160, 23, 0.25);
+}
+
+.form-actions button:first-child:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(212, 160, 23, 0.4);
+}
+
+.form-actions button:first-child:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.form-actions button:last-child {
+  background: rgba(226, 211, 179, 0.2);
+  color: var(--ink-soft);
+  border: 1px solid rgba(226, 211, 179, 0.4);
+}
+
+.form-actions button:last-child:hover {
+  background: rgba(226, 211, 179, 0.35);
+  color: var(--ink);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .student-form-container {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}

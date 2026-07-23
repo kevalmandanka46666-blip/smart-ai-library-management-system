@@ -1,0 +1,434 @@
+/* ===== Authors Page - PREMIUM GOLD & WHITE DESIGN ===== */
+/* Matches existing Students.css design system exactly */
+
+.authors-page {
+  padding: 2rem 3rem;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.authors-page .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1.5px solid rgba(212, 160, 23, 0.15);
+}
+
+.authors-page .page-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+/* ===== Authors Grid ===== */
+.authors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1199px) {
+  .authors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .authors-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Author Card ===== */
+.author-card {
+  background: var(--card);
+  border: 1px solid rgba(226, 211, 179, 0.5);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;
+  height: 100%;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-soft);
+  box-sizing: border-box;
+}
+
+.author-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ===== Author Card Header ===== */
+.author-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(226, 211, 179, 0.4);
+}
+
+.author-avatar {
+  font-size: 1.75rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold-soft);
+  border: 1.5px solid rgba(212, 160, 23, 0.2);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.author-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.author-info h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 0.25rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.author-meta {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold-dark);
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== Author Card Body ===== */
+.author-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.author-card-body p {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  margin: 0;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.author-card-body p.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.author-card-body p.bio-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal;
+}
+
+.author-card-body p strong {
+  color: var(--ink);
+  font-weight: 600;
+  margin-right: 0.25rem;
+  display: inline-block;
+  min-width: 85px;
+}
+
+/* ===== Author Card Actions ===== */
+.author-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(226, 211, 179, 0.4);
+  margin-top: auto;
+}
+
+.author-card-actions button {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  transition: all 0.25s ease;
+}
+
+/* ===== Modal Overlay ===== */
+.author-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 27, 21, 0.45);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeInOverlay 0.25s ease;
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.author-modal {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 90%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(20, 18, 15, 0.15);
+  border: 1px solid rgba(226, 211, 179, 0.5);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.author-modal h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1.5px solid rgba(212, 160, 23, 0.15);
+}
+
+.author-form-group {
+  margin-bottom: 1.25rem;
+}
+
+.author-form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.author-form-group input,
+.author-form-group textarea,
+.author-form-group select {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border: 1.5px solid rgba(212, 160, 23, 0.25);
+  border-radius: 12px;
+  background: #fffdf9;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.author-form-group input:focus,
+.author-form-group textarea:focus,
+.author-form-group select:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(212, 160, 23, 0.12);
+  background: #ffffff;
+}
+
+.author-form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.author-form-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(226, 211, 179, 0.3);
+}
+
+.author-form-actions button {
+  flex: 1;
+  padding: 0.85rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.author-form-actions .save-btn {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(212, 160, 23, 0.25);
+}
+
+.author-form-actions .save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(212, 160, 23, 0.4);
+}
+
+.author-form-actions .save-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.author-form-actions .cancel-btn {
+  background: #fafafa;
+  color: var(--ink);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.author-form-actions .cancel-btn:hover {
+  background: #f0f0f0;
+}
+
+/* ===== Delete Confirm Modal ===== */
+.delete-confirm-content {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.delete-confirm-content .delete-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.delete-confirm-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.delete-confirm-content p {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.delete-confirm-content .warning-text {
+  color: #b91c1c;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.delete-confirm-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.delete-confirm-actions button {
+  flex: 1;
+  padding: 0.85rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-confirm-actions .confirm-delete-btn {
+  background: #dc2626;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.25);
+}
+
+.delete-confirm-actions .confirm-delete-btn:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+}
+
+.delete-confirm-actions .confirm-delete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.delete-confirm-actions .cancel-delete-btn {
+  background: #fafafa;
+  color: var(--ink);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.delete-confirm-actions .cancel-delete-btn:hover {
+  background: #f0f0f0;
+}
+
+/* ===== Form Error Message ===== */
+.form-error {
+  padding: 0.85rem 1rem;
+  background: #fdf2f2;
+  border: 1.5px solid rgba(220, 38, 38, 0.2);
+  border-radius: 12px;
+  color: #b91c1c;
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .authors-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .authors-page .page-header {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .authors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .author-card-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .author-modal {
+    padding: 1.75rem;
+    width: 95%;
+  }
+}

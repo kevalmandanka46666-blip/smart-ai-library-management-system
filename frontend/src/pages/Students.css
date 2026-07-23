@@ -1,0 +1,401 @@
+/* ===== Students Page - PREMIUM GOLD & WHITE DESIGN ===== */
+:root {
+  --gold: #D4A017;
+  --gold-dark: #b3861b;
+  --gold-soft: #fbf7ed;
+  --ink: #1e1b15;
+  --ink-soft: #5c5549;
+  --bg: #fdfcf9;
+  --card: #ffffff;
+  --shadow-soft: 0 10px 35px rgba(20, 18, 15, 0.04);
+  --shadow-hover: 0 20px 45px rgba(212, 160, 23, 0.12);
+  --border-radius: 16px;
+}
+
+.students-page {
+  padding: 2.5rem 32px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1.5px solid rgba(212, 160, 23, 0.15);
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.add-btn {
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  border: none;
+  border-radius: var(--border-radius);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(212, 160, 23, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(212, 160, 23, 0.4);
+}
+
+/* ===== Search Bar ===== */
+.search-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  background: var(--card);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(226, 211, 179, 0.6);
+  box-shadow: var(--shadow-soft);
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.9rem 1.4rem;
+  background: #fffdf9;
+  border: 1.5px solid rgba(212, 160, 23, 0.25);
+  border-radius: 12px;
+  font-size: 0.98rem;
+  color: var(--ink);
+  transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(212, 160, 23, 0.12);
+  background: #ffffff;
+}
+
+.search-bar button {
+  padding: 0.9rem 2rem;
+  background: var(--ink);
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-bar button:hover {
+  background: var(--gold-dark);
+}
+
+.search-bar button:last-child {
+  background: rgba(226, 211, 179, 0.25);
+  color: var(--ink-soft);
+  border: 1px solid rgba(226, 211, 179, 0.5);
+}
+
+.search-bar button:last-child:hover {
+  background: rgba(226, 211, 179, 0.4);
+  color: var(--ink);
+}
+
+/* ===== Students Grid ===== */
+.students-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(280px, 1fr));
+  gap: 2rem;
+  overflow-x: auto; /* Allow horizontal scroll if parent is too small */
+}
+
+@media (max-width: 1199px) {
+  .students-grid {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .students-grid {
+    grid-template-columns: minmax(280px, 1fr);
+  }
+}
+
+/* ===== Student Card ===== */
+.student-card {
+  background: var(--card);
+  border: 1px solid rgba(226, 211, 179, 0.5);
+  border-radius: var(--border-radius);
+  padding: 1.5rem 1.5rem 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 280px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-soft);
+  box-sizing: border-box;
+}
+
+.student-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ===== Student Card Header ===== */
+.student-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(226, 211, 179, 0.4);
+}
+
+.student-avatar {
+  font-size: 1.75rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold-soft);
+  border: 1.5px solid rgba(212, 160, 23, 0.2);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.student-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.student-info h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 0.25rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.student-id {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold-dark);
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.status.active {
+  background: #e6f6ec;
+  color: #15803d;
+}
+
+.status.inactive {
+  background: #fdf2f2;
+  color: #b91c1c;
+}
+
+/* ===== Student Card Body ===== */
+.student-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.student-card-body p {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  margin: 0;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.student-card-body p strong {
+  color: var(--ink);
+  font-weight: 600;
+  margin-right: 0.25rem;
+  display: inline-block;
+  min-width: 70px;
+}
+
+/* ===== Student Card Actions ===== */
+.student-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(226, 211, 179, 0.4);
+  margin-top: auto;
+  flex-wrap: nowrap;
+}
+
+.student-card-actions button {
+  flex: 1;
+  padding: 0.7rem 0.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.view-btn {
+  background: var(--gold-soft);
+  color: var(--gold-dark);
+  border: 1px solid rgba(212, 160, 23, 0.2) !important;
+}
+
+.view-btn:hover {
+  background: rgba(212, 160, 23, 0.15);
+  color: var(--ink);
+}
+
+.edit-btn {
+  background: #fafafa;
+  color: var(--ink);
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.edit-btn:hover {
+  background: #f0f0f0;
+}
+
+.delete-btn {
+  background: rgba(220, 38, 38, 0.06);
+  color: #dc2626;
+  border: 1px solid rgba(220, 38, 38, 0.1) !important;
+}
+
+.delete-btn:hover {
+  background: rgba(220, 38, 38, 0.12);
+  color: #b91c1c;
+}
+
+/* ===== Loading & Error ===== */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.error {
+  padding: 1rem 1.5rem;
+  background: #fdf2f2;
+  border: 1.5px solid rgba(220, 38, 38, 0.2);
+  border-radius: var(--border-radius);
+  color: #b91c1c;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: var(--ink-soft);
+  background: var(--card);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(226, 211, 179, 0.5);
+  box-shadow: var(--shadow-soft);
+}
+
+.empty-state p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.empty-state button {
+  padding: 0.8rem 2.2rem;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  border: none;
+  border-radius: var(--border-radius);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(212, 160, 23, 0.25);
+  transition: all 0.3s ease;
+}
+
+.empty-state button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(212, 160, 23, 0.4);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .students-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .page-header {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .students-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-card-body {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .student-card-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

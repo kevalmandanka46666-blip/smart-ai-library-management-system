@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  database:
+    image: mongo:6.0
+    container_name: library_database
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=library_db
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: library_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGODB_URL=mongodb://database:27017
+      - DATABASE_NAME=library_db
+      - SECRET_KEY=prod-secret-key-to-be-replaced-in-env
+      - DEBUG=False
+      - CORS_ORIGINS=http://localhost,http://localhost:80,http://localhost:5173
+    depends_on:
+      - database
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: library_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:

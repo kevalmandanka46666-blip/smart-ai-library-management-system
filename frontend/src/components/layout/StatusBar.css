@@ -1,0 +1,45 @@
+/* ===== Status Bar ===== */
+.status-bar {
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  padding: 0.5rem 2rem;
+  width: 100%;
+}
+
+.status-bar-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.status-divider {
+  color: #e2e8f0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .status-bar {
+    padding: 0.4rem 1rem;
+  }
+
+  .status-bar-content {
+    font-size: 0.7rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .status-divider {
+    display: none;
+  }
+}

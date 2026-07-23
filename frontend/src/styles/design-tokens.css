@@ -1,0 +1,55 @@
+/**
+ * Enterprise UI Component Library - Design Tokens
+ * 
+ * Reusable layout, color, type, elevation, and animation variables.
+ */
+:root {
+  /* Colors */
+  --eu-color-primary: #D4A017;
+  --eu-color-primary-hover: #b3861b;
+  --eu-color-secondary: #5c5549;
+  --eu-color-success: #16a34a;
+  --eu-color-success-bg: rgba(22, 163, 74, 0.1);
+  --eu-color-info: #3b82f6;
+  --eu-color-info-bg: rgba(59, 130, 246, 0.1);
+  --eu-color-warning: #ea580c;
+  --eu-color-warning-bg: rgba(234, 88, 12, 0.1);
+  --eu-color-danger: #dc2626;
+  --eu-color-danger-bg: rgba(220, 38, 38, 0.1);
+  --eu-color-bg-base: #ffffff;
+  --eu-color-bg-surface: #fdfcf9;
+  --eu-color-text-main: #1e1b15;
+  --eu-color-text-soft: #9ca3af;
+  --eu-color-border-main: rgba(226, 211, 179, 0.3);
+
+  /* Spacing */
+  --eu-space-xs: 4px;
+  --eu-space-sm: 8px;
+  --eu-space-md: 16px;
+  --eu-space-lg: 24px;
+  --eu-space-xl: 32px;
+
+  /* Border Radius */
+  --eu-radius-sm: 4px;
+  --eu-radius-md: 8px;
+  --eu-radius-lg: 12px;
+  --eu-radius-full: 9999px;
+
+  /* Shadows / Elevations */
+  --eu-shadow-low: 0 2px 6px rgba(0, 0, 0, 0.05);
+  --eu-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --eu-shadow-high: 0 20px 45px rgba(20, 18, 15, 0.08);
+  
+  /* Transitions */
+  --eu-transition-fast: all 0.15s ease;
+  --eu-transition-normal: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --eu-transition-slow: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Typography */
+  --eu-font-family: system-ui, -apple-system, sans-serif;
+  --eu-font-size-xs: 0.72rem;
+  --eu-font-size-sm: 0.82rem;
+  --eu-font-size-base: 1rem;
+  --eu-font-size-lg: 1.15rem;
+  --eu-font-size-xl: 1.5rem;
+}
